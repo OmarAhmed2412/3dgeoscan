@@ -10,6 +10,21 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Define the keyframes */
+  --animate-orbit: orbit 20s linear infinite;
+  --animate-counter-orbit: counter-orbit 20s linear infinite;
+
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes counter-orbit {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {

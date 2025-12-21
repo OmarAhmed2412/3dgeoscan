@@ -17,11 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className="snap-y snap-mandatory scroll-smooth">
+      <body className={`${inter.className} overflow-y-scroll`}>
         <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <main className="h-screen w-full">{children}</main>
+        {/* <Footer /> */}
       </body>
     </html>
   );

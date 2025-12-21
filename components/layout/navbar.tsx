@@ -2,19 +2,33 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { label: "about us", href: "/about" },
-  { label: "projects", href: "/projects" },
-  { label: "services", href: "/services" },
+  { label: "About us", href: "/about" },
+  { label: "Projects", href: "/projects" },
+  { label: "Services", href: "/services" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        scrolled ? "bg-white shadow-sm" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           
@@ -27,9 +41,9 @@ export default function Navbar() {
               height={40}
               className="w-10 h-10 object-contain"
             />
-            <span className="text-xl font-bold">
+            <span className="text-xl">
               <span className="text-orange-500">3D</span>
-              <span className="text-white"> GEOSCAN</span>
+              <span className={`${scrolled ? "text-gray-900" : "text-white"} font-bold`}> GEOSCAN</span>
             </span>
           </Link>
 
@@ -39,7 +53,11 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-white/80 hover:text-white transition-colors text-sm font-medium"
+                className={`${
+                  scrolled
+                    ? "text-gray-900 hover:text-gray-700"
+                    : "text-white/80 hover:text-white"
+                } transition-colors text-sm font-medium`}
               >
                 {link.label}
               </Link>
@@ -50,15 +68,15 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="bg-orange-500 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors"
+              className="bg-[#E55C24] text-white px-8 py-2.5 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors"
             >
-              contact us
+              Contact us
             </Link>
           </div>
 
           {/* mobile menu button */}
           <button
-            className="md:hidden text-white"
+            className={`md:hidden ${scrolled ? "text-gray-900" : "text-white"}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg

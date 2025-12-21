@@ -20,20 +20,20 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* small tag */}
-        <div className="flex items-center gap-2 mb-6">
+        <div className="inline-flex items-center gap-2 bg-orange-500/10 backdrop-blur-sm rounded-full border border-orange-500 px-4 py-2 mb-6">
           <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-          <span className="text-white text-sm font-medium px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
-            a jump into the future
+          <span className="text-white text-sm font-medium">
+            A jump into the future
           </span>
         </div>
 
         {/* main title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight max-w-3xl">
-          a world
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl">
+          A World
           <br />
-          transformed by
+          Transformed by
           <br />
-          <span className="text-orange-500">3d geo-intelligence</span>
+          <span className="text-orange-500">3d Geo-Intelligence</span>
         </h1>
 
         {/* description */}
@@ -47,15 +47,15 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/videos"
-            className="bg-orange-500 text-white px-6 py-3 rounded-full text-base font-medium hover:bg-orange-600 transition-colors text-center"
+            className="bg-gradient-to-r from-orange-600 to-orange-400 text-white px-6 py-3 rounded-lg text-base font-medium hover:from-orange-500 hover:to-orange-700 transition-colors text-center"
           >
-            watch our videos
+            Watch our videos
           </Link>
           <Link
-            href="/projects"
-            className="border border-white text-white px-6 py-3 rounded-full text-base font-medium hover:bg-white hover:text-gray-900 transition-colors text-center"
+            href="/videos"
+            className="border border-white text-white px-6 py-3 rounded-lg text-base font-medium hover:bg-white hover:text-gray-900 transition-colors text-center"
           >
-            watch our videos
+            Watch our videos
           </Link>
         </div>
       </div>
