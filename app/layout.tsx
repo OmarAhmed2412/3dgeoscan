@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import ScrollIndicator from "@/components/layout/scroll-indicator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en" className="snap-y snap-mandatory scroll-smooth">
       <body className={`${inter.className} overflow-y-scroll`}>
         <Navbar />
+        <ScrollIndicator />
         <main className=" w-full">{children}</main>
         <Footer />
       </body>

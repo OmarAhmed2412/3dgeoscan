@@ -2,7 +2,7 @@
 
 export default function Solutions() {
     return (
-        <section id="solutions" className="h-screen snap-start flex items-center bg-white pt-[80px]">
+        <section id="vision" className="h-screen snap-start flex items-center bg-white pt-[80px]">
             <div className="max-w-7xl mx-auto px-6 w-full">
                 <span className="lg:text-sm font-bold text-orange-500 mb-8">Vision</span>
                 <h2 className="text-4xl lg:text-5xl sm:text-2xl font-bold text-gray-900 mb-8 leading-tight">
