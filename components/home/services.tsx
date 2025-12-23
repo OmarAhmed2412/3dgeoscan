@@ -1,6 +1,6 @@
 'use client';
 
-export function Services() {
+export default function Services() {
     const services = [
         {
             title: "3D Scanning",
