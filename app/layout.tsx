@@ -20,8 +20,8 @@ export default function RootLayout({
     <html lang="en" className="snap-y snap-mandatory scroll-smooth">
       <body className={`${inter.className} overflow-y-scroll`}>
         <Navbar />
-        <main className="h-screen w-full">{children}</main>
-        {/* <Footer /> */}
+        <main className=" w-full">{children}</main>
+        <Footer />
       </body>
     </html>
   );

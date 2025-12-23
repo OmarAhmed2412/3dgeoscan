@@ -23,7 +23,7 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white">
+    <footer className="bg-[#2C2C31] text-white snap-start">
       
       {/* main footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
