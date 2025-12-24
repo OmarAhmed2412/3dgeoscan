@@ -25,6 +25,14 @@
       transform: rotate(-360deg);
     }
   }
+  @keyframes complexShimmer {
+  0%   { opacity: 0.3; } /* Start dim */
+  25%  { opacity: 0.6; } /* Slight glow */
+  45%  { opacity: 0.3; } /* Dim again */
+  60%  { opacity: 1.0; } /* FULL BRIGHTNESS FLASH */
+  80%  { opacity: 0.5; } /* Fade out slowly */
+  100% { opacity: 0.3; } /* Back to start */
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,4 +46,24 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Apply RNG to create varied shimmer effects */
+/* Group 1: Standard speed */
+.polygons > g:nth-child(odd) {
+  animation: complexShimmer 6s ease-in-out infinite;
+}
+/* Group 2: Slower, creating a "background hum" */
+.polygons > g:nth-child(2n) {
+  animation: complexShimmer 9s ease-in-out infinite;
+  animation-delay: 1s;
+}
+/* Group 3: Faster, creating "active data" spikes */
+.polygons > g:nth-child(3n) {
+  animation: complexShimmer 4s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+/* Group 4: Offset to fill the gaps */
+.polygons > g:nth-child(5n) {
+  animation-delay: 4s;
 }
