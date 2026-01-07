@@ -21,7 +21,7 @@ export default function Projects() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 [&:has(.card:hover)_.card:not(:hover)]:opacity-70 
                 [&:has(.card:hover)_.card:not(:hover)]:blur-[1px] 
                 transition-all duration-500">
-                    <div className="md:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer h-64 md:h-64 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border-4 hover:border-orange-500 card">
+                    <div className="md:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer h-64 md:h-64 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border-4 border-transparent hover:border-orange-500 card">
                         <img src={projects[0].image || "/placeholder.svg"} alt="Project" className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                             <div>
@@ -33,7 +33,7 @@ export default function Projects() {
                         </div>
                     </div>
 
-                    <div className="md:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer h-64 md:h-64 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border-4 hover:border-orange-500 card">
+                    <div className="md:col-span-2 relative rounded-2xl overflow-hidden group cursor-pointer h-64 md:h-64 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border-4 border-transparent hover:border-orange-500 card">
                         <img src={projects[1].image || "/placeholder.svg"} alt="Project" className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                             <div>
@@ -46,7 +46,7 @@ export default function Projects() {
                     </div>
 
                     {projects.slice(2).map((project, idx) => (
-                        <div key={idx} className="relative rounded-2xl overflow-hidden group cursor-pointer h-48 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border-4 hover:border-orange-500 card">
+                        <div key={idx} className="relative rounded-2xl overflow-hidden group cursor-pointer h-48 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl border-4 border-transparent hover:border-orange-500 card">
                             <img src={project.image || "/placeholder.svg"} alt="Project" className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
                                 <div>
