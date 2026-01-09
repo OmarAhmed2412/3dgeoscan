@@ -62,7 +62,7 @@ function NewsCard({ item }: { item: typeof newsItems[0] }) {
 // Main Section Component
 export default function LatestNews() {
     return (
-        <section id="News" className="h-screen md:snap-start flex items-center bg-white pt-20">
+        <section id="News" className="min-h-screen md:h-screen md:snap-start flex items-center bg-white py-10 md:pt-20 md:pb-0">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
                 {/* Header */}

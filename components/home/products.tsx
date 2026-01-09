@@ -119,7 +119,7 @@ export default function Products() {
 
     return (
         // Kept original Section & Container classes
-        <section id='products' className="h-screen md:snap-start flex items-center bg-white pt-20">
+        <section id='products' className="min-h-screen md:h-screen md:snap-start flex items-center bg-white py-10 md:pt-20 md:pb-0">
             <div className="max-w-7xl mx-auto px-4 w-full">
                 
                 {/* Section Heading */}

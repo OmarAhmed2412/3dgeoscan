@@ -9,7 +9,7 @@ export default function Projects() {
     ]
 
     return (
-        <section id="projects" className="h-screen md:snap-start flex items-center bg-white pt-20">
+        <section id="projects" className="min-h-screen md:h-screen md:snap-start flex items-center bg-white py-10 md:pt-20 md:pb-0">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <span className="text-sm font-bold text-orange-500 mb-8">Projects</span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">Highlighted Projects</h2>
