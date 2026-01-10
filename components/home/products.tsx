@@ -22,11 +22,11 @@ export default function Products() {
     const handleNext = () => {
         setSlideDirection('right');
         setStatus('exiting'); // Step 1: Slide current card left
-        
+
         setTimeout(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
             setStatus('teleporting'); // Step 2: Instantly position new card on right
-            
+
             setTimeout(() => {
                 setStatus('idle'); // Step 3: Slide new card from right to center
             }, 50);
@@ -36,11 +36,11 @@ export default function Products() {
     const handlePrev = () => {
         setSlideDirection('left');
         setStatus('exiting'); // Step 1: Slide current card right
-        
+
         setTimeout(() => {
             setCurrentIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length);
             setStatus('teleporting'); // Step 2: Instantly position new card on left
-            
+
             setTimeout(() => {
                 setStatus('idle'); // Step 3: Slide new card from left to center
             }, 50);
@@ -51,11 +51,11 @@ export default function Products() {
         if (index !== currentIndex) {
             setSlideDirection(index > currentIndex ? 'right' : 'left');
             setStatus('exiting');
-            
+
             setTimeout(() => {
                 setCurrentIndex(index);
                 setStatus('teleporting');
-                
+
                 setTimeout(() => {
                     setStatus('idle');
                 }, 50);
@@ -88,79 +88,81 @@ export default function Products() {
                     {/* Overflow wrapper for slide effect - doesn't affect arrows */}
                     <div className="overflow-hidden w-full">
                         {/* Main Grid Content: Changed from 3 columns to 2 columns */}
-                        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center w-full min-h-[350px] md:min-h-[450px] ${
-                            status === 'exiting'
+                        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center w-full min-h-[350px] md:min-h-[450px] ${status === 'exiting'
                                 ? 'transition-all duration-500 ease-in-out ' + (slideDirection === 'right' ? '-translate-x-full opacity-0' : 'translate-x-full opacity-0')
                                 : status === 'teleporting'
-                                ? (slideDirection === 'right' ? 'translate-x-full' : '-translate-x-full') // No transition during teleport
-                                : 'transition-all duration-500 ease-in-out translate-x-0 opacity-100'
-                        }`}>
+                                    ? (slideDirection === 'right' ? 'translate-x-full' : '-translate-x-full') // No transition during teleport
+                                    : 'transition-all duration-500 ease-in-out translate-x-0 opacity-100'
+                            }`}>
 
-                        {/* --- Column 1: Product Image (Card Style) --- */}
-                        <div className="relative w-full aspect-square max-h-[300px] md:max-h-[400px] lg:max-h-[450px] bg-gray-50 rounded-[40px] flex items-center justify-center p-4 md:p-6 lg:p-8">
-                            <img
-                                key={currentProduct.id}
-                                src={currentProduct.productImage}
-                                alt={currentProduct.title}
-                                className="w-full h-auto object-contain max-h-full drop-shadow-xl z-10"
-                            />
-                        </div>
-
-                        {/* --- Column 2: Product Details --- */}
-                        <div className="flex flex-col justify-center h-full">
-
-                            {/* Title & Logos */}
-                            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{currentProduct.title}</h3>
-                            
-                            {/* Simple Logo/Badge placeholder row */}
-                            <div className="flex items-center gap-4 mb-6">
-                                {currentProduct.logos.map((logo, i) => (
-                                    <span key={i} className="font-bold text-gray-700 text-sm tracking-widest uppercase border border-gray-300 px-2 py-1 rounded">
-                                        {logo}
-                                    </span>
-                                ))}
+                            {/* --- Column 1: Product Image (Card Style) --- */}
+                            <div className="relative w-full aspect-square max-h-[300px] md:max-h-[400px] lg:max-h-[450px] bg-gray-50 rounded-[40px] flex items-center justify-center p-4 md:p-6 lg:p-8">
+                                <img
+                                    key={currentProduct.id}
+                                    src={currentProduct.productImage}
+                                    alt={currentProduct.title}
+                                    className="w-full h-auto object-contain max-h-full drop-shadow-xl z-10"
+                                />
                             </div>
 
-                            {/* Description */}
-                            <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6 md:mb-8">
-                                {currentProduct.description}
-                            </p>
+                            {/* --- Column 2: Product Details --- */}
+                            <div className="flex flex-col justify-center h-full">
 
-                            {/* Two-Column List Section (Package & Software) */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-6 mb-6 md:mb-8">
-                                {/* Package Includes */}
-                                <div>
-                                    <h4 className="font-bold text-gray-900 mb-3">Package Includes</h4>
-                                    <ul className="space-y-2">
-                                        {currentProduct.packageIncludes.map((item, idx) => (
-                                            <li key={idx} className="flex items-start text-sm text-gray-600">
-                                                <span className={`${brandColorClass} mr-2`}>•</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                {/* Title & Logos */}
+                                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{currentProduct.title}</h3>
+
+                                {/* Simple Logo/Badge placeholder row */}
+                                <div className="flex items-center gap-4 mb-6">
+                                    {currentProduct.logos.map((logo, i) => (
+                                        <span key={i} className="font-bold text-gray-700 text-sm tracking-widest uppercase border border-gray-300 px-2 py-1 rounded">
+                                            {logo}
+                                        </span>
+                                    ))}
                                 </div>
 
-                                {/* Software */}
-                                <div>
-                                    <h4 className="font-bold text-gray-900 mb-3">Software</h4>
-                                    <p className="text-sm text-gray-600">
-                                        {currentProduct.software}
-                                    </p>
+                                {/* Description */}
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6 md:mb-8">
+                                    {currentProduct.description}
+                                </p>
+
+                                {/* Two-Column List Section (Package & Software) */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-6 mb-6 md:mb-8">
+                                    {/* Package Includes */}
+                                    <div>
+                                        <h4 className="font-bold text-gray-900 mb-3">Package Includes</h4>
+                                        <ul className="space-y-2">
+                                            {currentProduct.packageIncludes.map((item, idx) => (
+                                                <li key={idx} className="flex items-start text-sm text-gray-600">
+                                                    <span className={`${brandColorClass} mr-2`}>•</span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    {/* Software */}
+                                    <div>
+                                        <h4 className="font-bold text-gray-900 mb-3">Software</h4>
+                                        <p className="text-sm text-gray-600">
+                                            {currentProduct.software}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* CTA Buttons */}
+                                <div className="flex justify-center md:justify-start flex-wrap gap-4">
+                                    <button className={`${brandBgClass} text-white font-semibold py-2 px-6 md:py-3 md:px-8 rounded-lg hover:opacity-90 transition cursor-pointer`}>
+                                        Get a Quote
+                                    </button>
+                                    <button
+                                        onClick={() => router.push(`/products/${currentProduct.slug}`)}
+                                        className="bg-white text-[#E55C24] border-2 border-[#E55C24] font-semibold py-2 px-6 md:py-3 md:px-8 rounded-lg hover:bg-orange-50 transition cursor-pointer"
+                                    >
+                                        Learn More
+                                    </button>
                                 </div>
                             </div>
-
-                            {/* CTA Buttons */}
-                            <div className="flex justify-center md:justify-start flex-wrap gap-4">
-                                <button className={`${brandBgClass} text-white font-semibold py-2 px-6 md:py-3 md:px-8 rounded-lg hover:opacity-90 transition cursor-pointer`}>
-                                    Get a Quote
-                                </button>
-                                <button className="bg-white text-[#E55C24] border-2 border-[#E55C24] font-semibold py-2 px-6 md:py-3 md:px-8 rounded-lg hover:bg-orange-50 transition cursor-pointer">
-                                    Learn More
-                                </button>
-                            </div>
                         </div>
-                    </div>
                     </div>
                     {/* Right Navigation Arrow */}
                     <button onClick={handleNext} aria-label="Next" className="absolute top-32 md:bottom-32 right-2 md:-right-12 lg:-right-16 z-20 p-1 md:p-2 text-gray-400 cursor-pointer hover:text-gray-800 transition">
