@@ -25,6 +25,10 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={isHomePage ? "snap-y snap-mandatory scroll-smooth" : "scroll-smooth"}>
+      <head>
+        <title>3DGEOSCAN - professional 3d geospatial scanning</title>
+        <meta name="description" content="professional 3d geospatial scanning solutions" />
+      </head>
       <body className={`${inter.className} overflow-y-scroll`}>
         <Navbar />
         <ScrollIndicator />

@@ -48,7 +48,7 @@ export default function Service2() {
     ];
 
     return (
-        <section className="h-screen bg-gray-50 py-20 snap-start flex items-center snap-start">
+        <section id="underground-utilities" className="h-screen bg-gray-50 py-20 snap-start flex items-center snap-start">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     
@@ -114,7 +114,7 @@ export default function Service2() {
                     <div className="order-2">
                         {/* Main Title */}
                         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-                            3D Laser Scanning
+                            Underground Utilities
                         </h2>
 
                         {/* Subtitle */}

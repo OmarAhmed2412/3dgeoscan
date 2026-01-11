@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function Services() {
     const services = [
         {
@@ -8,6 +10,7 @@ export default function Services() {
                 "High-precision laser scanning technology to capture detailed spatial data of structures, terrain, and infrastructure. Create accurate 3D models for documentation, analysis, and planning.",
             dark: false,
             image: "/images/3dscans.png",
+            link: "/services#3d-scanning",
         },
         {
             title: "Underground Utilities",
@@ -15,6 +18,7 @@ export default function Services() {
                 "Advanced detection and mapping of underground utilities including pipes, cables, and infrastructure. Prevent costly damages and ensure safe excavation with precise subsurface mapping.",
             dark: false,
             image: "/images/undergroundutil.jpg",
+            link: "/services#underground-utilities",
         },
         {
             title: "Digital Twin",
@@ -22,12 +26,14 @@ export default function Services() {
                 "Create dynamic virtual replicas of physical assets and environments. Enable real-time monitoring, simulation, and predictive maintenance for enhanced decision-making and asset management.",
             dark: false,
             image: "/images/digitwin.jpg",
+            link: "/services#digital-twin",
         },
         {
             title: "Geophysical Studies",
             description:
                 "Comprehensive subsurface investigation using advanced geophysical methods. Analyze soil conditions, identify geological features, and assess site characteristics for construction and environmental projects.",
             image: "/images/geophysicstudies.png",
+            link: "/services#geophysical-studies",
         },
     ]
 
@@ -39,9 +45,10 @@ export default function Services() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {services.map((service, idx) => (
-                        <div
+                        <Link
                             key={idx}
-                            className={`group relative rounded-2xl p-6 md:p-8 bg-[#E9E9E9] text-black relative overflow-hidden transition-all hover:shadow-2xl`}
+                            href={service.link}
+                            className={`group relative rounded-2xl p-6 md:p-8 bg-[#E9E9E9] text-black relative overflow-hidden transition-all hover:shadow-2xl block`}
                         >
                             <div
                                 className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0">
@@ -65,8 +72,8 @@ export default function Services() {
                                 </div>
                                 <h3 className="text-white text-xl md:text-2xl font-bold mb-3 translate-y-28 md:translate-y-20 transition-all duration-500 group-hover:translate-y-0 group-hover:text-black">{service.title}</h3>
                                 <p className="text-sm md:text-base text-white/90 transition-all duration-500 opacity-0 translate-y-10 group-hover:translate-y-0 group-hover:opacity-100 group-hover:text-gray-600">{service.description}</p>
-                            </div>
-                        </div>
+                          </div>
+                        </Link>
                     ))}
                 </div>
             </div>

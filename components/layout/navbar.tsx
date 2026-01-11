@@ -50,7 +50,7 @@ export default function Navbar() {
               className="w-10 h-10 object-contain"
             />
             <span className="text-xl">
-              <span className="text-orange-500">3D</span>
+              <span className={`${isSolid ? "text-gray-900" : "text-white"}`}>3D</span>
               <span className={`${isSolid ? "text-gray-900" : "text-white"} font-bold`}> GEOSCAN</span>
             </span>
           </Link>

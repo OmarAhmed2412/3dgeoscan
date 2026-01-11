@@ -21,23 +21,25 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* small tag */}
-        <div className="inline-flex items-center gap-3 bg-orange-500/10 backdrop-blur-sm rounded-full border-orange-500 px-4 py-2 mb-6">
+        {/* <div className="inline-flex items-center gap-3 bg-orange-500/10 backdrop-blur-sm rounded-full border-orange-500 px-4 py-2 mb-6">
           <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
           <span className="block text-[#F36F21] font-bold tracking-widest text-lg md:text-xl uppercase">
             A jump into the future
           </span>
-        </div>
+        </div> */}
 
         {/* main title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold text-white mb-6 leading-tight max-w-3xl">
-          A World
+        <h1 className="text-[#F36F21] text-white font-bold tracking-widest uppercase text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-6 leading-tight max-w-3xl">
+          A jump 
           <br />
-          Transformed by
-          <br />
-          <Typewriter words={["Precision Scanning", "Digital Innovation", "3D Geo-Intelligence"]} />
+          into <span className="text-[#F36F21]">the future</span>
         </h1>
+        
 
         {/* description */}
+        <p>
+           A World Transformed by <Typewriter words={["Precision Scanning", "Digital Innovation", "3D Geo-Intelligence"]} />
+        </p>
         <p className="text-gray-300 text-base sm:text-lg mb-8 max-w-xl leading-relaxed">
           utilizing cutting-edge laser scanning technology and expert analysis, we capture
           reality in unparalleled detail — enabling smarter design, faster construction, and
